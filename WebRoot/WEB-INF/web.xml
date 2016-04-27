@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
+     <!-- 编码过滤器 -->  
+   <filter>  
+        <filter-name>setCharacterEncoding</filter-name>  
+        <filter-class>com.mysky.company.filter.EncodeFilter</filter-class>  
+        <init-param>  
+            <param-name>encoding</param-name>  
+            <param-value>utf-8</param-value>  
+        </init-param>  
+   </filter>  
+   <filter-mapping>  
+        <filter-name>setCharacterEncoding</filter-name>  
+        <url-pattern>/*</url-pattern>  
+   </filter-mapping>
+    
+  <!-- servlet -->>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Command</servlet-name>
+    <servlet-class>com.mysky.company.action.Command</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CommandPage</servlet-name>
+    <servlet-class>com.mysky.company.action.CommandPage</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>Command</servlet-name>
+    <url-pattern>/command</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommandPage</servlet-name>
+    <url-pattern>/commandPage</url-pattern>
+  </servlet-mapping>  
+   
+
+
+</web-app>
